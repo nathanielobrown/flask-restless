@@ -1337,7 +1337,7 @@ class API(ModelView):
         result = dict(num_deleted=num_deleted)
         for postprocessor in self.postprocessors['DELETE_MANY']:
             postprocessor(result=result, search_params=search_params)
-        return (result, 200) if num_deleted > 0 else 404
+        return (result, 200)
 
     def delete(self, instid, relationname, relationinstid):
         """Removes the specified instance of the model with the specified name
